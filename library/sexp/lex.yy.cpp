@@ -16,14 +16,6 @@
 
 /* First, we deal with  platform-specific or compiler-specific issues. */
 
-#ifdef _WIN32
-#ifndef YY_NO_UNISTD_H
-#define YY_NO_UNISTD_H
-#endif
-#pragma warning(disable : 4003)
-#pragma warning(disable : 4996)
-#endif
-
 /* begin standard C headers. */
 #include <stdio.h>
 #include <string.h>
@@ -1343,16 +1335,9 @@ static void yy_load_buffer_state  (void)
 	yyfree((void *) b  );
 }
 
-#ifdef _WIN32
-extern "C"
-{
-extern int isatty (int );
-}
-#else
 #ifndef __cplusplus
 extern int isatty (int );
 #endif /* __cplusplus */
-#endif
     
 /* Initializes or reinitializes a buffer.
  * This function is sometimes called more than once on the same buffer,
