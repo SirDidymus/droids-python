@@ -10,17 +10,17 @@ class cache:
         self.clean_droids()
         
     def clean_droids(self):
-        self.my_droids = [[None for _ in range*self.ai.mapHeight)] for _ in range(self.ai.mapWidth)]]
-        self.enemy_droids = [[None for _ in range*self.ai.mapHeight)] for _ in range(self.ai.mapWidth)]]
-        self.enemy_hangars = [[None for _ in range*self.ai.mapHeight)] for _ in range(self.ai.mapWidth)]]
+        self.my_droids = [[None for _ in range(self.ai.mapHeight)] for _ in range(self.ai.mapWidth)]
+        self.enemy_droids = [[None for _ in range(self.ai.mapHeight)] for _ in range(self.ai.mapWidth)]
+        self.enemy_hangars = [[None for _ in range(self.ai.mapHeight)] for _ in range(self.ai.mapWidth)]
 
-    def update(self):
+    def update_droids(self):
         self.clean_droids()
         
         for droid in self.ai.droids:
             if droid.owner == self.ai.playerID:
                 self.my_droids[droid.x][droid.y] = droid
-            elif droid.owner == self.ai.playerID^1
+            elif droid.owner == self.ai.playerID^1:
                 self.enemy_droids[droid.x][droid.y] = droid
                 
                 if droid.variant == self.ai.HANGAR:
